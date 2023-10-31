@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://dkh3xeht05dem"]
+
+[ext_resource type="Script" path="res://1_JumpFox/Level/Prefab/Cherry/Cherry.gd" id="1_pi57w"]
+[ext_resource type="Texture2D" uid="uid://brhoiyq1u0j84" path="res://1_JumpFox/Art/Texture/cherry.png" id="2_pv3vg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wopmv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7xmy"]
+atlas = ExtResource("2_pv3vg")
+region = Rect2(0, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab1qx"]
+atlas = ExtResource("2_pv3vg")
+region = Rect2(21, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ianym"]
+atlas = ExtResource("2_pv3vg")
+region = Rect2(42, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se4h5"]
+atlas = ExtResource("2_pv3vg")
+region = Rect2(63, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tf38a"]
+atlas = ExtResource("2_pv3vg")
+region = Rect2(84, 0, 21, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sog88"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7xmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab1qx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ianym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se4h5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tf38a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se4h5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ianym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab1qx")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Cherry" type="Area2D"]
+script = ExtResource("1_pi57w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+scale = Vector2(0.86313, 0.859269)
+shape = SubResource("RectangleShape2D_wopmv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_sog88")
+animation = &"Idle"
+frame = 5
+frame_progress = 0.326662
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
