@@ -30,3 +30,7 @@ func _on_button_1JumpFox_pressed():
 
 func _on__one_eye_fish_pressed():
 	get_tree().change_scene_to_file("res://3_OneEyeFish/main_3.tscn")
+
+
+func _on__one_eye_fish_3d_pressed():
+	get_tree().change_scene_to_file("res://4_OneEyeFish3D/main.tscn")

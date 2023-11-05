@@ -37,12 +37,19 @@ size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 32
 text = "1 - Jump Fox"
 
-[node name="2_OneEyeFish" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="3_OneEyeFish" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "3 - OneEye Fish"
+
+[node name="4_OneEyeFish3D" type="Button" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "2 - OneEye Fish"
+text = "4 - OneEye Fish 3D"
 
 [connection signal="pressed" from="ButtonQuit" to="." method="_on_button_quit_pressed"]
 [connection signal="gui_input" from="ScrollContainer" to="." method="_on_scroll_container_gui_input"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/1_JumpFox" to="." method="_on_button_1JumpFox_pressed"]
-[connection signal="pressed" from="ScrollContainer/VBoxContainer/2_OneEyeFish" to="." method="_on__one_eye_fish_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/3_OneEyeFish" to="." method="_on__one_eye_fish_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/4_OneEyeFish3D" to="." method="_on__one_eye_fish_3d_pressed"]
