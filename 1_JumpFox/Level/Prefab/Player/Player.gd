@@ -1,4 +1,4 @@
-class_name Player
+class_name Player1
 extends CharacterBody2D
 
 # @onready var Game = preload("res://1_JumpFox/Code/Script/Global/Game.gd")
